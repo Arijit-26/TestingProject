@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-20T15:47:49 IST" name="Suite" finished-at="2025-07-20T15:49:26 IST" duration-ms="97116">
+    <groups>
+    </groups>
+    <test started-at="2025-07-20T15:47:49 IST" name="Test" finished-at="2025-07-20T15:49:26 IST" duration-ms="97116">
+      <class name="paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:47:49 IST" name="launchBrowser" finished-at="2025-07-20T15:47:56 IST" duration-ms="6970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:47:49 IST" name="launchBrowser" finished-at="2025-07-20T15:47:58 IST" duration-ms="8654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="shopping()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@ec2bf82, instance params:[jaganmohan@ghk.com, JaganMohan@980, Hero Hoodie, Comp1, Syr 1, Syr 2, Syr 3, Key, Khaimen, 900123, Syria, 8970694321]]" started-at="2025-07-20T15:47:56 IST" name="shopping" finished-at="2025-07-20T15:48:55 IST" duration-ms="58829" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shopping -->
+        <test-method signature="shopping()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:47:58 IST" name="shopping" finished-at="2025-07-20T15:48:51 IST" duration-ms="53261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shopping -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:48:51 IST" name="tearDown" finished-at="2025-07-20T15:48:52 IST" duration-ms="208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:48:52 IST" name="launchBrowser" finished-at="2025-07-20T15:48:58 IST" duration-ms="6477" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:48:52 IST" name="launchBrowser" finished-at="2025-07-20T15:48:58 IST" duration-ms="6541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:48:55 IST" name="tearDown" finished-at="2025-07-20T15:48:55 IST" duration-ms="141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="checkMyOrders()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:48:58 IST" name="checkMyOrders" finished-at="2025-07-20T15:49:19 IST" depends-on-methods="paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting.shopping" duration-ms="21232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkMyOrders -->
+        <test-method signature="checkMyOrders()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@ec2bf82, instance params:[jaganmohan@ghk.com, JaganMohan@980, Hero Hoodie, Comp1, Syr 1, Syr 2, Syr 3, Key, Khaimen, 900123, Syria, 8970694321]]" started-at="2025-07-20T15:48:58 IST" name="checkMyOrders" finished-at="2025-07-20T15:49:26 IST" depends-on-methods="paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting.shopping" duration-ms="28200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkMyOrders -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:49:19 IST" name="tearDown" finished-at="2025-07-20T15:49:19 IST" duration-ms="145" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting@cc62a3b, instance params:[jagatmohan@uk.com, JagatMohan@981, Hero Hoodie, Com23, Str 1, rd2, str3, Trip, District of Columbia, 345678, United States, 9087614512]]" started-at="2025-07-20T15:49:26 IST" name="tearDown" finished-at="2025-07-20T15:49:26 IST" duration-ms="168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- paralleltestingusingdataprovider.testclasses.TestClassForLoadTesting -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
