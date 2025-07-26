@@ -26,10 +26,10 @@ import paralleltestingusingdataprovider.pageobject.ProductCatalogueMen;
 import paralleltestingusingdataprovider.pageobject.ShippingPage;
 import paralleltestingusingdataprovider.pageobject.SuccessfulOrderPage;
 
-public class TestClassMain extends BaseTest {
+public class TestFromDataBase extends BaseTest {
 
 
-	@Test(dataProvider="dataProvidingThroughExcel", retryAnalyzer =paralleltestingusingdataprovider.basetestclass.Retry.class)
+	@Test(dataProvider="dataFromDataBase", retryAnalyzer =paralleltestingusingdataprovider.basetestclass.Retry.class)
 	public void shopping(String username,String password, String product,String comapnyName,String line1,String line2, String line3, String cityName, String regionName, String postCode, String countryName,String phone) throws InterruptedException, IOException {
 		
 		ProductCatalogue productCataloguePage = newLoginPage.loginAction(username,password);
@@ -44,7 +44,7 @@ public class TestClassMain extends BaseTest {
 		
 	}
 	
-	@Test(dependsOnMethods = { "shopping" },dataProvider="dataProvidingThroughExcel")                                                 //The test 'checkMyOrders' depends on the method 'shopping()'. So when we run this test, first 'shopping()' will be executed and only then will 'checkMyOrders()' be executed, because 'checkMyOrders()' won't run until 'shopping()' is completed
+	@Test(dependsOnMethods = { "shopping" },dataProvider="dataFromDataBase")                                                 //The test 'checkMyOrders' depends on the method 'shopping()'. So when we run this test, first 'shopping()' will be executed and only then will 'checkMyOrders()' be executed, because 'checkMyOrders()' won't run until 'shopping()' is completed
 	
 	public void checkMyOrders(String username,String password, String product,String comapnyName,String line1,String line2, String line3, String cityName, String regionName, String postCode, String countryName,String phone) throws InterruptedException {
 		

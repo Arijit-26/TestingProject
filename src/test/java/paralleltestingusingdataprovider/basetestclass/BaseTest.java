@@ -4,7 +4,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -37,6 +43,12 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import paralleltestingusingdataprovider.pageobject.LoginPage;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class BaseTest {
 	protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
@@ -105,39 +117,7 @@ public class BaseTest {
 		//Since the object newLoginPage is public , so we do not need to return it to the test class. It can be diretly used in the test class
 	}	
 	
-	 @DataProvider
-	    public Object[][] dataProvidingThroughExcel() throws IOException {
-	    	
-	    	FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\UserIds.xlsx"); //UserIds
-	    	XSSFWorkbook workBook = new XSSFWorkbook(fis);
-	    	XSSFSheet sheet = workBook.getSheetAt(0);
-	    	int rowNumber= sheet.getPhysicalNumberOfRows();                               //Getting the number of rows in the sheet
-	    	Row r = sheet.getRow(0);												      //This another way of getting into a row 
-	    	int cellNumber= r.getPhysicalNumberOfCells();								  //Getting the number of cells in a row. Number of columns = number of cells in a row						   
-	    	Object arr[][] = new Object[rowNumber-1][cellNumber];						  //Number of rows in the data array will be rowNumber-1 beacuse the first row in the excel is not a set of data. It contains headers
-	    	Iterator<Row> row = sheet.iterator();
-	    	//Row r1=row.next();
-	    	row.next();
-	    	//Getting into each row and fetching the data from each of its cells and storing in the multidimensional array
-	    	for(int i = 1;i<rowNumber;i++)
-	    	{
-	    		Row r2 = row.next();
-	    		Iterator<Cell> cell = r2.cellIterator();
-	    		for(int j=0;j<cellNumber;j++)
-	    		{
-	    			Cell cv = cell.next();
-					if(cv.getCellType()==CellType.STRING)         
-					{
-						arr[i-1][j] = cv.getStringCellValue();         
-					}
-					else {
-						arr[i-1][j] = NumberToTextConverter.toText(cv.getNumericCellValue());         
-					}
-	    		}
-	    	}
-	    	
-	    	return arr;                                                 //Feeding the multidimensional array of data into the test method from the dataprovider method
-	    }
+	
 	
 	 @DataProvider(parallel = true)
 	    public Object[][] dataProvidingForParallel() throws IOException {
@@ -173,6 +153,28 @@ public class BaseTest {
 	    	return array;                                                 //Feeding the multidimensional array of data into the test method from the dataprovider method
 	    }
 	
+	 @DataProvider
+	 public Object[][] dataFromDataBase() throws SQLException{
+		 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/userinfo", "root", "ArijitSQL#100");             
+			Statement s = con.createStatement();                    
+			ResultSet result = s.executeQuery("select * from userinf");    
+			ResultSetMetaData metaData = result.getMetaData();
+			int columnCount = metaData.getColumnCount();
+			ArrayList<Object[]> obj = new ArrayList<>();
+			while(result.next()){
+				Object[] row = new Object[columnCount];
+				for(int i=0;i<columnCount;i++) {
+					row[i] = result.getObject(i+1).toString();
+				}
+				obj.add(row);
+			}
+			
+			
+			Object[][] array =  obj.toArray(new Object[0][]);
+			
+			return array;
+		}
+	 
 
 	
 	@AfterMethod(alwaysRun=true)                            

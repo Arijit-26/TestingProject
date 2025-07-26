@@ -6,8 +6,9 @@
       <class name="paralleltestingusingdataprovider.testclasses.TestClassMain">
         <methods>
           <include name="tearDown"/>
-          <include name="shopping" invocation-numbers="0"/>
+          <include name="checkMyOrders" invocation-numbers="1"/>
           <include name="launchBrowser"/>
+          <include name="shopping" invocation-numbers="1"/>
         </methods>
       </class> <!-- paralleltestingusingdataprovider.testclasses.TestClassMain -->
     </classes>
